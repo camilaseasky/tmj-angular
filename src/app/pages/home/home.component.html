@@ -1,0 +1,39 @@
+<div class="app-home">
+  <p-toolbar>
+    <div class="action-bar">
+      <img src="../../../assets/images/logo_header.png" width="40px" />
+    </div>
+    <div class="profile-container">
+      <div class="my-avatar">
+        <img src="../../../assets/images/avatar_list/avatar_2.jpg" />
+        <span class="name">Miguel</span>
+      </div>
+      <div class="my-status">
+        <p-chart type="doughnut" [data]="data" [style]="{'width': '40%'}"></p-chart>
+      </div>
+    </div>
+    <div class="friends-list">
+      <div class="avatar-container">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_2.jpg"></p-avatar>
+        <span class="name">Miguel</span>
+      </div>
+      <div class="avatar-container">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_3.jpg"></p-avatar>
+        <span class="name">Gabi</span>
+      </div>
+      <div class="avatar-container">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_4.jpg"></p-avatar>
+        <span class="name">Arthur</span>
+      </div>
+      <div class="avatar-container">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_6.jpg"></p-avatar>
+        <span class="name">Pedro</span>
+      </div>
+    </div>
+  </p-toolbar>
+  <div class="feed-container">
+    <div class="card-container">
+      <p-card></p-card>
+    </div>
+  </div>
+</div>
