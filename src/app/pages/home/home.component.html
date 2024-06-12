@@ -3,34 +3,100 @@
     <div class="action-bar">
       <img src="../../../assets/images/logo_header.png" width="40px" />
     </div>
+    <div class="my-name">
+      Melissa Bueno
+    </div>
     <div class="profile-container">
-      <div class="my-avatar">
-        <img src="../../../assets/images/avatar_list/avatar_2.jpg" />
-        <span class="name">Miguel</span>
+      <div class="status-container">
+        <div class="my-avatar" [class.pode-ajudar]="podeAjudar" [class.precisa-ajuda]="precisaAjuda">
+          <img src="../../../assets/images/avatar_list/avatar_my.avif" />
+        </div>
       </div>
       <div class="my-status">
-        <p-chart type="doughnut" [data]="data" [style]="{'width': '40%'}"></p-chart>
+        <p-chart type="doughnut" [data]="data" [options]="options" width="125px"></p-chart>
       </div>
     </div>
-    <div class="friends-list">
-      <div class="avatar-container">
+  </p-toolbar>
+  <div class="my-dashboard">
+    <div class="indicador-status">
+      <span>Como estão suas emoções neste momento?</span>
+     </div>
+    <div class="indicadores-container">
+      <div class="item-indicador" *ngFor="let emocao of emocoes" [ngClass]="emocao.styleClass">
+        <div class="label-indicador">{{emocao.nome}}</div>
+        <p-slider [(ngModel)]="emocao.valor" [step]="1" [min]="0" [max]="10" (onSlideEnd)="atualizarGrafico()" ></p-slider>
+      </div>
+    </div>
+    <div class="comment-status" *ngIf="precisaAjuda">
+      <span>😰 Você não está muito legal hoje, né? Nessas podemos pedir ajuda e é sempre bom conversar sobre o que estamos sentindo com alguém.</span>
+     </div>
+     <div class="comment-status" *ngIf="podeAjudar">
+      <span>😎 Você está de boa! Que tal ajudar um amigo que não esteja tão bem?</span>
+     </div>
+     <div class="indicador-status" *ngIf="precisaAjuda">
+      <span>Amigos disponíveis para ajudar</span>
+     </div>
+     <div class="indicador-status" *ngIf="podeAjudar">
+      <span>Amigos precisando de ajuda</span>
+     </div>
+    <div class="friends-list" *ngIf="podeAjudar">
+      <div class="avatar-container precisa-ajuda">
         <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_2.jpg"></p-avatar>
         <span class="name">Miguel</span>
       </div>
-      <div class="avatar-container">
+      <div class="avatar-container precisa-ajuda">
         <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_3.jpg"></p-avatar>
         <span class="name">Gabi</span>
       </div>
-      <div class="avatar-container">
+      <div class="avatar-container precisa-ajuda">
         <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_4.jpg"></p-avatar>
         <span class="name">Arthur</span>
       </div>
-      <div class="avatar-container">
+      <div class="avatar-container precisa-ajuda">
         <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_6.jpg"></p-avatar>
         <span class="name">Pedro</span>
       </div>
     </div>
-  </p-toolbar>
+    <div class="friends-list" *ngIf="precisaAjuda">
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_2.jpg"></p-avatar>
+        <span class="name">Miguel</span>
+      </div>
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_3.jpg"></p-avatar>
+        <span class="name">Gabi</span>
+      </div>
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_4.jpg"></p-avatar>
+        <span class="name">Arthur</span>
+      </div>
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/avatar_6.jpg"></p-avatar>
+        <span class="name">Pedro</span>
+      </div>
+    </div>
+    <div class="indicador-status" *ngIf="precisaAjuda">
+      <span>Terapeutas que podem te ajudar</span>
+     </div>
+    <div class="friends-list" *ngIf="precisaAjuda">
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/terapeuta_1.png"></p-avatar>
+        <span class="name">Ana</span>
+      </div>
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/terapeuta_2.png"></p-avatar>
+        <span class="name">Júlia</span>
+      </div>
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/terapeuta_3.png"></p-avatar>
+        <span class="name">Henrique</span>
+      </div>
+      <div class="avatar-container pode-ajudar">
+        <p-avatar size="xlarge" shape="circle" image="../../../assets/images/avatar_list/terapeuta_4.png"></p-avatar>
+        <span class="name">Emanuela</span>
+      </div>
+    </div>
+  </div>
   <div class="feed-container">
     <div class="card-container">
       <p-card></p-card>

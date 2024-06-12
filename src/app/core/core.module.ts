@@ -5,6 +5,8 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {AvatarModule} from 'primeng/avatar';
 import {CardModule} from 'primeng/card';
 import {ChartModule} from 'primeng/chart';
+import {SliderModule} from 'primeng/slider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -14,14 +16,20 @@ import {ChartModule} from 'primeng/chart';
     ToolbarModule,
     AvatarModule,
     CardModule,
-    ChartModule
+    ChartModule,
+    SliderModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ButtonModule,
     ToolbarModule,
     AvatarModule,
     CardModule,
-    ChartModule
+    ChartModule,
+    SliderModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }
