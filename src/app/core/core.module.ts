@@ -7,6 +7,8 @@ import {CardModule} from 'primeng/card';
 import {ChartModule} from 'primeng/chart';
 import {SliderModule} from 'primeng/slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {PanelModule} from 'primeng/panel';
+import {BadgeModule} from 'primeng/badge';
 
 @NgModule({
   declarations: [],
@@ -19,7 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ChartModule,
     SliderModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PanelModule,
+    BadgeModule
   ],
   exports: [
     ButtonModule,
@@ -29,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ChartModule,
     SliderModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PanelModule,
+    BadgeModule
   ]
 })
 export class CoreModule { }
